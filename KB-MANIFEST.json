@@ -2,11 +2,9 @@
   "schema_version": "1.0",
   "resource_id": "skill-box",
   "repository": "wakazhangjiahuang/skill-box",
-  "ref": "1fedfdb6f0b4e9cf0facebc5d0252007b746e2ea",
+  "ref": "81f2f0ea37374428086d69bbecc9e81d6cdc96b7",
   "entrypoints": {
     "A": [
-      "compat",
-      "source-audit",
       "template-A"
     ],
     "B": [
@@ -22,26 +20,6 @@
     ]
   },
   "assets": [
-    {
-      "id": "compat",
-      "path": "knowledge/migration-compatibility.md",
-      "task_tags": [
-        "A"
-      ],
-      "required": true,
-      "sha256": "674b086790cbad6a5721ee66850f3e95c1983cd2061cd8610175a78cf4dc2049",
-      "source": "Skill Box v1.0 curated source"
-    },
-    {
-      "id": "source-audit",
-      "path": "knowledge/source-audit.md",
-      "task_tags": [
-        "A"
-      ],
-      "required": true,
-      "sha256": "b7587298c76388076ed44344edd7053840c09e6a7ea08b7c7894580806253e2f",
-      "source": "Skill Box v1.0 curated source"
-    },
     {
       "id": "architecture",
       "path": "knowledge/architecture-research.md",
