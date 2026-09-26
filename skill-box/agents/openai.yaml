@@ -1,7 +1,7 @@
 interface:
   display_name: Skill Box
-  short_description: 迁移 GPTS、创建 Skill、诊断与升级现有 Skill
-  default_prompt: 使用 $skill-box A 模式，审计我上传的 GPTS 资料并重构业务链；先交架构比较、逐文件迁移和验收方案供我确认。
+  short_description: 迁移 GPTS、创建与升级 Skill、设计并构建 Agent
+  default_prompt: 使用 $skill-box 分析我的目标与资料，选择 A/B/C/D 模式，给出清晰架构并完成已授权的创建或升级与验证。
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
