@@ -35,7 +35,7 @@ description: 用于 GPTS 内容迁移为 Plugin/Skill 的深度分析与构建�
 
 需要 GitHub 知识时读取 [资产路由规范](references/github-assets.md)，使用 [Manifest 示例](assets/KB-MANIFEST.example.json) 作为结构参考。选择已有仓库或按专业 Skill 规划独立仓库，复用现有命名。记录公开/私有、目标分支或 commit、访问方式、路径、标签、来源和校验值。外部写入不可用时交付可审查的本地资产与待执行清单；不伪造远端写入或读取。
 
-本工具箱自身的独立资产定位为 resource_id = skill-box，目标仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json；在远端创建和校验成功之前，该定位为待启用，使用本包 references 中的最小离线规范。不得把 brush、iphub 等业务仓库用作 Skill Box 的存储位置。
+本工具箱自身的独立资产定位为 resource_id = skill-box，目标仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json；该仓库已经建立并通过资产读取校验；运行时仍须通过实际可用的 GitHub 工具读取 Manifest 与当前任务资源。不得把 brush、iphub 等业务仓库用作 Skill Box 的存储位置。
 
 对采用示例 schema 的新仓库，可运行 scripts/select_assets.py <manifest> <task-id> 列出精确资源；已有仓库采用自身 Manifest schema 时按其真实结构解析，不强制套用示例脚本。
 
