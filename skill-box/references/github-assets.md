@@ -1,6 +1,8 @@
 # GitHub 资产路由契约
 
-优先沿用已有业务仓库和 Manifest，不为统一名字破坏 brush、iphub 等现有路径。新专业 Skill 通常对应一个主知识仓库。Registry 只存 resource_id → owner/repo → manifest path → ref，不复制全部资产清单。
+先核查 Skill 包内 references、assets、scripts 是否足够，并记录每份资料的体量、更新频率、跨 Skill 共享和权限需求。只有这些需求有实际证据时才使用 GitHub；已有业务仓库可沿用，不为统一命名破坏 brush、iphub 等路径，也不为几份短文建立强制远端依赖。无需仓库时不设置 Manifest。采用仓库时 Registry 只存 resource_id → owner/repo → manifest path → ref，不复制全部资产清单。
+
+对每项迁移资产记录来源、去重决定、唯一目标路径与实际读取者；不在包内和仓库双份维护正文。先查已有原始开源项目的许可、版本、依赖和可替换模块，合规采用或二改后保留归属与变更记录。
 
 Manifest 至少记录 schema_version、resource_id、repository、固定 ref、entrypoints 和每项资产的 id/path/task_tags/required/sha256/source。路径是仓库相对路径，禁止 .. 与绝对路径；entrypoint 仅列任务相关资源。资产示例见 assets/KB-MANIFEST.example.json。采用 commit SHA 锁定交付版本，更新时显式评估差异。
 
