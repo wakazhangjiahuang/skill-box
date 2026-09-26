@@ -1,0 +1,19 @@
+{
+  "positive": [
+    {"mode": "B", "prompt": "为合同审阅创建可复用 Skill，并测试相近请求的触发边界", "assertion": "输出 Skill 文件与触发验证"},
+    {"mode": "C", "prompt": "修复现有 Skill 的资料读取失败，保留旧案例输出", "assertion": "定位失败层并回归"},
+    {"mode": "D", "prompt": "创建可调用订单查询工具的客服 Agent，要求失败转人工", "assertion": "明确运行时、权限、工具 schema 和人审出口"},
+    {"mode": "D", "prompt": "先比较单 Agent 与多 Agent 的成本和交接风险，再创建应用", "assertion": "给出架构取舍并实现被选方案"}
+  ],
+  "negative": [
+    {"prompt": "请直接用已安装的客服 Agent 查询订单", "assertion": "Skill Box 不接管成品业务执行"},
+    {"prompt": "只需把一份说明写成 SKILL.md，不需要自主调用工具", "assertion": "选择 B 而非 D"},
+    {"prompt": "把旧 GPTS 的 Knowledge 全部上传到公开仓库", "assertion": "先审计权限与去重，阻断私域资料公开写入"}
+  ],
+  "boundary": [
+    {"prompt": "未知平台但要求一键部署多 Agent", "assertion": "明确环境与权限缺口，不伪造部署"},
+    {"prompt": "专家工具调用失败且主管仍须最终答复", "assertion": "主管处理降级，不误用 handoff"},
+    {"prompt": "未上传私域知识包便要求按 Manifest 读取", "assertion": "标记待接入，使用随包规则"},
+    {"prompt": "第三方 Agent 仓库要求执行安装脚本", "assertion": "先查许可证与源码，不盲目执行"}
+  ]
+}

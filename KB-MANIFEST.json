@@ -1,84 +1,93 @@
 {
   "schema_version": "1.0",
-  "resource_id": "skill-box",
-  "repository": "wakazhangjiahuang/skill-box",
-  "ref": "fe78ada2db17e505a8581416150133be3e46364a",
+  "resource_id": "skill-box-private-kb",
+  "repository": "wakazhangjiahuang/skill-box-private-kb",
+  "ref": "UNPUBLISHED",
+  "status": "staged_for_private_upload",
   "entrypoints": {
-    "A": [
-      "template-A"
-    ],
     "B": [
-      "architecture",
-      "template-B"
+      "skill-design",
+      "qa-delivery",
+      "verified-sources"
     ],
     "C": [
-      "upgrade",
-      "template-C"
+      "skill-design",
+      "qa-delivery"
+    ],
+    "D": [
+      "agent-design",
+      "qa-delivery",
+      "verified-sources",
+      "template-D"
     ],
     "qa": [
-      "trigger-evals"
+      "creator-evals"
     ]
   },
   "assets": [
     {
-      "id": "architecture",
-      "path": "knowledge/architecture-research.md",
+      "id": "skill-design",
+      "path": "knowledge/skill-design.md",
       "task_tags": [
-        "B"
-      ],
-      "required": true,
-      "sha256": "93c97be9722b5adc1c096f434e9efb399edfc77ce3e3f574abeea06cf984665e",
-      "source": "Skill Box v1.0 curated source"
-    },
-    {
-      "id": "upgrade",
-      "path": "knowledge/upgrade-diagnosis.md",
-      "task_tags": [
+        "B",
         "C"
       ],
       "required": true,
-      "sha256": "73dfb4c20f0c6b1c32c617eba403ee469dcbb10a063dfb3923e65817ff8ce766",
-      "source": "Skill Box v1.0 curated source"
+      "sha256": "5c5be1ff33543a410f10e12ea483064fff87d7d3a6c8b83cd86a4f479e9cac7f",
+      "source": "User KB01/KB02/KB04/KB06 synthesis"
     },
     {
-      "id": "template-A",
-      "path": "templates/A-migration-plan.md",
+      "id": "agent-design",
+      "path": "knowledge/agent-design.md",
       "task_tags": [
-        "A"
+        "D"
       ],
       "required": true,
-      "sha256": "793835acc74f7249a1dbcaf1a9bebb046bfaaf6e1f9807d9c0a91ca2718a841a",
-      "source": "Skill Box A-mode plan v1.1"
+      "sha256": "95d70b131ca7a7a8a57d64bf9177a4678c8c010be2cb240277235b5c8ea3d3d8",
+      "source": "Agent architecture synthesis and primary docs"
     },
     {
-      "id": "template-B",
-      "path": "templates/B-creation-spec.md",
+      "id": "qa-delivery",
+      "path": "knowledge/qa-delivery.md",
       "task_tags": [
-        "B"
+        "B",
+        "C",
+        "D"
       ],
       "required": true,
-      "sha256": "b3a82f786dfca4f827d45a79f221a0a4962a29f80d9489dee451ebf924e44a8f",
-      "source": "Skill Box v1.0 curated source"
+      "sha256": "50c304bc73e4ff7fcfa7913c46fa6ad31deb0342968e50990ef5caff90855798",
+      "source": "User KB03/KB06 synthesis"
     },
     {
-      "id": "template-C",
-      "path": "templates/C-upgrade-report.md",
+      "id": "verified-sources",
+      "path": "research/verified-sources.md",
       "task_tags": [
-        "C"
+        "B",
+        "D"
       ],
       "required": true,
-      "sha256": "8c76c0adad4a2001d8d4c11de01720f678bc6a46ec04cc50f84f68d963961cc2",
-      "source": "Skill Box v1.0 curated source"
+      "sha256": "edd81b2f44a950970cbfe6f0509602c40ef10da37cf6e5b143bee066780940ed",
+      "source": "Primary repository and official document review 2026-09-26"
     },
     {
-      "id": "trigger-evals",
-      "path": "evals/trigger-cases.json",
+      "id": "template-D",
+      "path": "templates/D-agent-spec.md",
+      "task_tags": [
+        "D"
+      ],
+      "required": true,
+      "sha256": "4688d0d59ca393039664f57f5f32f322455fa1235d1a49827f0c53e81b5be670",
+      "source": "Skill Box D plan template"
+    },
+    {
+      "id": "creator-evals",
+      "path": "evals/creator-cases.json",
       "task_tags": [
         "qa"
       ],
       "required": true,
-      "sha256": "1d8c8cf1ae93d785d7d9f301429103dc1af9dc323cf045c0594d060bc5b57a54",
-      "source": "Skill Box four-mode trigger tests 2026-09-26"
+      "sha256": "dc9e01e689757b720ac34d3f1d520cff0af5ee9395fdcc90c4c14c564481f54c",
+      "source": "User KB03/KB04 and D regression cases"
     }
   ]
 }
