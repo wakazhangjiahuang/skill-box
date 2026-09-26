@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "resource_id": "skill-box",
   "repository": "wakazhangjiahuang/skill-box",
-  "ref": "4eafcbd858fa4278615e41d5d5237dabb6785653",
+  "ref": "1fedfdb6f0b4e9cf0facebc5d0252007b746e2ea",
   "entrypoints": {
     "A": [
       "compat",
@@ -69,8 +69,8 @@
         "A"
       ],
       "required": true,
-      "sha256": "05ae84f3cad1ee0ed8a4b807b8a23751a4c64ac6ad7670832b43a68eba8159c6",
-      "source": "Skill Box v1.0 curated source"
+      "sha256": "793835acc74f7249a1dbcaf1a9bebb046bfaaf6e1f9807d9c0a91ca2718a841a",
+      "source": "Skill Box A-mode plan v1.1"
     },
     {
       "id": "template-B",
@@ -99,8 +99,8 @@
         "qa"
       ],
       "required": true,
-      "sha256": "87a1463724bcbf0c6dd9691456757d66704b35093fe4595cd4d7de01799e5e88",
-      "source": "Skill Box v1.0 curated source"
+      "sha256": "8b73f69989a1887fda48807b7e10b1dc632e79371bb988927bebd2bc8a9df7ac",
+      "source": "Skill Box A-mode tests v1.1"
     }
   ]
 }
