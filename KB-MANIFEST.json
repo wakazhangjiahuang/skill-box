@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "resource_id": "skill-box",
   "repository": "wakazhangjiahuang/skill-box",
-  "ref": "81f2f0ea37374428086d69bbecc9e81d6cdc96b7",
+  "ref": "fe78ada2db17e505a8581416150133be3e46364a",
   "entrypoints": {
     "A": [
       "template-A"
@@ -77,8 +77,8 @@
         "qa"
       ],
       "required": true,
-      "sha256": "8b73f69989a1887fda48807b7e10b1dc632e79371bb988927bebd2bc8a9df7ac",
-      "source": "Skill Box A-mode tests v1.1"
+      "sha256": "1d8c8cf1ae93d785d7d9f301429103dc1af9dc323cf045c0594d060bc5b57a54",
+      "source": "Skill Box four-mode trigger tests 2026-09-26"
     }
   ]
 }
