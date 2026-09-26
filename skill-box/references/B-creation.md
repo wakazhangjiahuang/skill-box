@@ -4,6 +4,6 @@
 
 制定目标用户、触发/不触发、必需和可选输入、决策规则、工具与权限、流程、异常及停止条件、交付文件、可观察质量指标。建立至少两个正常案例、一个缺失输入案例、一个负触发案例及预期行为。
 
-将简明执行协议放 SKILL.md，复杂专业资料放 GitHub；少量离线兜底放 references/，确定性处理放 scripts/，复制模板放 assets/。不强制创建空目录、巨大 Registry 或无用 MCP。实时资产在 Skill 中明确 Manifest、选择、取回、版本校验和失败回退。
+将简明执行协议放 SKILL.md；短小稳定规则放 references/，确定性处理放 scripts/，复制模板放 assets/。只有规模、更新、共享或权限确有需要时才将复杂资料放 GitHub。不强制创建空目录、巨大 Registry 或无用 MCP。采用远程资产时明确 Manifest、选择、取回、版本校验和失败回退。
 
 按当前 skill-creator 流程初始化、验证、安装、保存，并实际执行代表案例。用户要 Plugin ZIP 时按当前规范增加适用 manifest 并验证平台入口；Skill ZIP 与 Plugin ZIP 分别命名和报告。
