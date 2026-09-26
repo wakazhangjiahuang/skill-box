@@ -13,13 +13,13 @@ description: 用于 GPTS 内容迁移为 Plugin/Skill 的深度分析与构建�
 2. 区分事实、用户要求、推断与待核实项。对易变化的 Plugin、模型、API、连接器和 GitHub 项目联网核实，优先官方文档和原始仓库；记录访问日期、版本或 commit、链接与实际可复用能力。
 3. 建立任务契约：目标用户、触发、输入、输出、成功标准、边界、工具和失败路径。有限信息时根据证据提出合理默认值并明确假设；仅对阻止正确执行的缺口提问。
 4. 进行深度审计和差距分析，按影响排序，提出逐文件变更、保留项、风险和验收案例。不要以泛化 Prompt 替代专业判断。
-5. SKILL.md 保存执行协议、判断规则、资源路由和输出契约；大规模知识、素材、案例、模板及数据进入按业务隔离的 GitHub 仓库；确定性处理进 scripts/。不可把全部知识正文复制进 Skill，亦不可仅写 URL 就声称资源可读。
+5. 先按业务用途去重，再决定资产位置。SKILL.md 放触发与必要执行协议，短小稳定的规则放 references/，可复用模板放 assets/，确定性处理放 scripts/。仅当体量、更新频率、跨 Skill 共享或权限要求有依据时，才规划 GitHub 仓库。保留来源记录，避免包内与仓库重复维护同一正文；仅写 URL 不代表资源可读。
 6. 按需使用已安装的 skill-creator 创建、验证、安装和保存目标 Skill；复杂系统判断可参考 ai-system-architecture-advisor，外部应用可参考相应 App/MCP 技能。遵守当前环境和实际权限。它们都不是目标业务 Skill 的运行依赖。
 7. 区分方案已核实、本地包已验证、远端仓库与连接已实测。未执行的写入、安装、迁移或运行测试标记未验证。
 
 ## A｜GPTS Migration Builder
 
-读取 [迁移专项](references/A-migration.md)。输入包括 GPTS 名称、描述、Instructions、启动 Prompt、Knowledge、Actions、Capabilities 和反馈。先提交完整迁移与迭代方案：旧内容深度审计、目标任务契约、兼容矩阵、知识资产清单及去重拆分、GitHub 仓库与 Manifest 路由、Plugin 能力路线、版本和测试矩阵、逐文件修改清单。
+读取 [迁移专项](references/A-migration.md)。输入包括 GPTS 名称、描述、Instructions、启动 Prompt、Knowledge、Actions、Capabilities 和反馈。按可检查的方案门禁执行：逐份读取并建立证据台账 → 还原旧能力、反馈与目标业务链 → 逐段去重、查冲突和核实事实 → 决定 SKILL.md、references、assets、scripts、GitHub 或归档的唯一去向 → 检索开源候选并核查许可、适配、依赖和可复用模块 → 比较单 Skill 多模式、拆分 Skill、必要工具服务 → 推荐架构并给出取舍、链路图、逐文件方案和测试 → 用户核实。先定义目标 Skill 做什么，再决定文件放哪里；不得凭两份上传材料就预设拆成两个 Skill。
 
 用户要求 A 先核实方案：在其确认该目标方案之前，不生成或安装目标升级 Skill 包，不写入目标知识仓库，不迁移原 GPT。确认后执行构建、验证、打包和已授权的写入，不对已确认的范围重复征求许可。单独核实原 GPT 迁移、发布和分享权限的当前平台行为，不把本地 ZIP 称作已迁移的 Plugin。
 
@@ -35,11 +35,11 @@ description: 用于 GPTS 内容迁移为 Plugin/Skill 的深度分析与构建�
 
 需要 GitHub 知识时读取 [资产路由规范](references/github-assets.md)，使用 [Manifest 示例](assets/KB-MANIFEST.example.json) 作为结构参考。选择已有仓库或按专业 Skill 规划独立仓库，复用现有命名。记录公开/私有、目标分支或 commit、访问方式、路径、标签、来源和校验值。外部写入不可用时交付可审查的本地资产与待执行清单；不伪造远端写入或读取。
 
-本工具箱自身的独立资产定位为 resource_id = skill-box，目标仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json；该仓库已经建立并通过资产读取校验；运行时仍须通过实际可用的 GitHub 工具读取 Manifest 与当前任务资源。不得把 brush、iphub 等业务仓库用作 Skill Box 的存储位置。
+本工具箱自身的包外资产定位为 resource_id = skill-box，仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json。仅在使用包外模板或资料时通过实际可用的 GitHub 工具读取 Manifest 与当前任务资源；随 Skill 打包的规则不依赖网络。不得把 brush、iphub 等业务仓库用作 Skill Box 的存储位置。
 
 对采用示例 schema 的新仓库，可运行 scripts/select_assets.py <manifest> <task-id> 列出精确资源；已有仓库采用自身 Manifest schema 时按其真实结构解析，不强制套用示例脚本。
 
-日常链路：启动 Prompt 指定任务与输入 → 专业 Skill 判断任务 → 读取 Registry 指针及仓库 Manifest → 精确取回所需文件 → 校验来源和版本 → 专业 Skill 执行 → GPT/Codex 生成 → QA → 交付。关键文件读取失败时停止依赖它的生成并说明缺口；非关键资料可按契约降级。目标 Skill 自己运行此链路，Skill Box 退出。
+目标业务 Skill 的日常链路：启动 Prompt 给出任务与输入 → 专业 Skill 判断 → 读取随包 references/assets；仅在批准的架构需要外部资料时读取 Registry/Manifest 并精确取回 → 校验来源与版本 → 执行 → GPT/Codex 生成 → QA → 交付。关键资料缺失时停止依赖它的结论，非关键资料按契约降级。Skill Box 仅负责开发维护，不参与日常执行。
 
 ## 验证和交付
 
