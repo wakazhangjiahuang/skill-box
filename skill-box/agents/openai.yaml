@@ -1,4 +1,13 @@
 interface:
-  display_name: "Skill Box"
-  short_description: "迁移 GPTS、创建 Skill、诊断与升级现有 Skill"
-  default_prompt: "使用 $skill-box 分析我上传的 GPTS 或 Skill 资料，给出资产路由、迭代方案与验证结果。"
+  display_name: Skill Box
+  short_description: 迁移 GPTS、创建 Skill、诊断与升级现有 Skill
+  default_prompt: 使用 $skill-box A 模式，审计我上传的 GPTS 资料并重构业务链；先交架构比较、逐文件迁移和验收方案供我确认。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
