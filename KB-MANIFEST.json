@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "resource_id": "skill-box",
+  "repository": "wakazhangjiahuang/skill-box",
+  "ref": "main",
+  "entrypoints": {
+    "A": [
+      "compat",
+      "source-audit",
+      "template-A"
+    ],
+    "B": [
+      "architecture",
+      "template-B"
+    ],
+    "C": [
+      "upgrade",
+      "template-C"
+    ],
+    "qa": [
+      "trigger-evals"
+    ]
+  },
+  "assets": [
+    {
+      "id": "compat",
+      "path": "knowledge/migration-compatibility.md",
+      "task_tags": [
+        "A"
+      ],
+      "required": true,
+      "sha256": "674b086790cbad6a5721ee66850f3e95c1983cd2061cd8610175a78cf4dc2049",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "source-audit",
+      "path": "knowledge/source-audit.md",
+      "task_tags": [
+        "A"
+      ],
+      "required": true,
+      "sha256": "b7587298c76388076ed44344edd7053840c09e6a7ea08b7c7894580806253e2f",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "architecture",
+      "path": "knowledge/architecture-research.md",
+      "task_tags": [
+        "B"
+      ],
+      "required": true,
+      "sha256": "93c97be9722b5adc1c096f434e9efb399edfc77ce3e3f574abeea06cf984665e",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "upgrade",
+      "path": "knowledge/upgrade-diagnosis.md",
+      "task_tags": [
+        "C"
+      ],
+      "required": true,
+      "sha256": "73dfb4c20f0c6b1c32c617eba403ee469dcbb10a063dfb3923e65817ff8ce766",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "template-A",
+      "path": "templates/A-migration-plan.md",
+      "task_tags": [
+        "A"
+      ],
+      "required": true,
+      "sha256": "05ae84f3cad1ee0ed8a4b807b8a23751a4c64ac6ad7670832b43a68eba8159c6",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "template-B",
+      "path": "templates/B-creation-spec.md",
+      "task_tags": [
+        "B"
+      ],
+      "required": true,
+      "sha256": "b3a82f786dfca4f827d45a79f221a0a4962a29f80d9489dee451ebf924e44a8f",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "template-C",
+      "path": "templates/C-upgrade-report.md",
+      "task_tags": [
+        "C"
+      ],
+      "required": true,
+      "sha256": "8c76c0adad4a2001d8d4c11de01720f678bc6a46ec04cc50f84f68d963961cc2",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "trigger-evals",
+      "path": "evals/trigger-cases.json",
+      "task_tags": [
+        "qa"
+      ],
+      "required": true,
+      "sha256": "87a1463724bcbf0c6dd9691456757d66704b35093fe4595cd4d7de01799e5e88",
+      "source": "Skill Box v1.0 curated source"
+    }
+  ]
+}

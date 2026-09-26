@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Box"
+  short_description: "迁移 GPTS、创建 Skill、诊断与升级现有 Skill"
+  default_prompt: "使用 $skill-box 分析我上传的 GPTS 或 Skill 资料，给出资产路由、迭代方案与验证结果。"

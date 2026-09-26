@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "resource_id": "example-specialist-skill",
+  "repository": "wakazhangjiahuang/example-knowledge",
+  "ref": "0123456789abcdef0123456789abcdef01234567",
+  "entrypoints": {
+    "task-a": ["core-rules", "output-schema"],
+    "qa": ["qa-rules"]
+  },
+  "assets": [
+    {"id": "core-rules", "path": "knowledge/core-rules.md", "task_tags": ["task-a"], "required": true, "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "source": "source-file-and-version"},
+    {"id": "output-schema", "path": "schemas/output.json", "task_tags": ["task-a"], "required": true, "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "source": "approved-schema"},
+    {"id": "qa-rules", "path": "references/qa-rules.md", "task_tags": ["qa"], "required": false, "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "source": "qa-standard"}
+  ]
+}
