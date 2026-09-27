@@ -1,17 +1,22 @@
 {
   "schema_version": "1.0",
-  "resource_id": "skill-box-private-kb",
-  "repository": "wakazhangjiahuang/skill-box-private-kb",
-  "ref": "UNPUBLISHED",
-  "status": "staged_for_private_upload",
+  "resource_id": "skill-box",
+  "repository": "wakazhangjiahuang/skill-box",
+  "ref": "33ae22f8630f19b603075fa98d10ef4674f6ce02",
+  "status": "active",
   "entrypoints": {
+    "A": [
+      "template-A"
+    ],
     "B": [
       "skill-design",
+      "template-B",
       "qa-delivery",
       "verified-sources"
     ],
     "C": [
       "skill-design",
+      "template-C",
       "qa-delivery"
     ],
     "D": [
@@ -21,10 +26,51 @@
       "template-D"
     ],
     "qa": [
+      "trigger-evals",
       "creator-evals"
     ]
   },
   "assets": [
+    {
+      "id": "template-A",
+      "path": "templates/A-migration-plan.md",
+      "task_tags": [
+        "A"
+      ],
+      "required": true,
+      "sha256": "793835acc74f7249a1dbcaf1a9bebb046bfaaf6e1f9807d9c0a91ca2718a841a",
+      "source": "Skill Box A-mode plan v1.1"
+    },
+    {
+      "id": "template-B",
+      "path": "templates/B-creation-spec.md",
+      "task_tags": [
+        "B"
+      ],
+      "required": true,
+      "sha256": "b3a82f786dfca4f827d45a79f221a0a4962a29f80d9489dee451ebf924e44a8f",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "template-C",
+      "path": "templates/C-upgrade-report.md",
+      "task_tags": [
+        "C"
+      ],
+      "required": true,
+      "sha256": "8c76c0adad4a2001d8d4c11de01720f678bc6a46ec04cc50f84f68d963961cc2",
+      "source": "Skill Box v1.0 curated source"
+    },
+    {
+      "id": "trigger-evals",
+      "path": "evals/trigger-cases.json",
+      "task_tags": [
+        "qa"
+      ],
+      "required": true,
+      "sha256": "1d8c8cf1ae93d785d7d9f301429103dc1af9dc323cf045c0594d060bc5b57a54",
+      "source": "Skill Box four-mode trigger tests 2026-09-26"
+    },
     {
       "id": "skill-design",
       "path": "knowledge/skill-design.md",
