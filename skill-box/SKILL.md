@@ -40,7 +40,7 @@ description: 用于 GPTS 迁移为 Skill、创建新 Skill、诊断升级已有 
 
 需要 GitHub 知识时读取 [资产路由规范](references/github-assets.md)，使用 [Manifest 示例](assets/KB-MANIFEST.example.json) 作为结构参考。选择已有仓库或按专业 Skill 规划独立仓库，复用现有命名。记录公开/私有、目标分支或 commit、访问方式、路径、标签、来源和校验值。外部写入不可用时交付可审查的本地资产与待执行清单；不伪造远端写入或读取。
 
-本工具箱自身的公开模板定位为 resource_id = skill-box，仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json。该仓库为公开仓库，不得存入用户要求私域保存的原始或提炼资料。私域知识包拟用 resource_id = skill-box-private-kb、仓库 wakazhangjiahuang/skill-box-private-kb、入口 KB-MANIFEST.json；该仓库尚待创建和验证，不能视为已连接。确认私有可见性、读取权限、Manifest 固定版本与摘要后，按 B/C/D/qa entrypoints 精确取回；此前 D 使用随包流程，并将私域资料标记待接入。
+用户已授权本工具箱的提炼资料公开存放。当前资源为 resource_id = skill-box，仓库 wakazhangjiahuang/skill-box，入口 KB-MANIFEST.json。先由 REPO-REGISTRY.json 固定 Manifest 提交，再由 Manifest 的 ref 固定资产提交；按 A/B/C/D/qa entrypoints 精确取回并校验每项 SHA256。若未来资料要求非公开，另设私有仓库与授权，不默认沿用此公开位置。
 
 对采用示例 schema 的新仓库，可运行 scripts/select_assets.py <manifest> <task-id> 列出精确资源；已有仓库采用自身 Manifest schema 时按其真实结构解析，不强制套用示例脚本。
 
