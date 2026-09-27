@@ -3,5 +3,10 @@
     "repo": "wakazhangjiahuang/skill-box",
     "manifest": "KB-MANIFEST.json",
     "ref": "e57b9f53041f89f2755e67d25faabc2c72e419ef"
+  },
+  "new-business-bible-advisor": {
+    "repo": "wakazhangjiahuang/new-business-bible-kb",
+    "manifest": "KB-MANIFEST.json",
+    "ref": "e5d1435af3adf9cee0a54576ebc83c4819669c70"
   }
 }
